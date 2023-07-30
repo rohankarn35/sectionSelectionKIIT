@@ -31,10 +31,10 @@ const Modal = () => {
             return  <button key={index} onClick={()=>dispatch(setAllotedSection(val))} className={`bg-gray-900 ${allotedSection==val && "bg-green-700"}  rounded-md  p-2`}>{val}</button>
         })}
        </div>
-       <h1 className='mt-2 ml-2'>Select Alloted Section</h1>
+       <h1 className='mt-2 ml-2'>Select Needed Section(Multi Select Available)</h1>
        <div className='grid grid-cols-4 p-2 mt-3 lg:grid-cols-8 gap-1 grid-flow-row'>
        {section.map((val,index)=>{
-            return  <button key={index} onClick={()=>dispatch(pushLookingFor(val))} className={`bg-gray-900 ${lookingFor.includes(val)?"bg-green-600":""}  rounded-md p-2`}>{val}</button>
+            return  <button disabled={allotedSection==val}  key={index} onClick={()=>dispatch(pushLookingFor(val))} className={`bg-gray-900 disabled:bg-gray-600 ${lookingFor.includes(val)?"bg-green-600":""}  rounded-md p-2`}>{val}</button>
         })}
        </div>
       <div className='w-full my-10 flex justify-center items-center'>
