@@ -24,7 +24,7 @@ export default function BasicTable({data}:{data:TableInfo[]}) {
           <TableRow   sx={{color:"white"}}  >
             <TableCell sx={{color:"white",fontWeight:"bold",fontFamily:"sans-serif" }} >Requested Name</TableCell>
             <TableCell sx={{color:"white",fontWeight:"bold",fontFamily:"sans-serif" }} align="right">Email</TableCell>
-            <TableCell sx={{color:"white",fontWeight:"bold",fontFamily:"sans-serif" }} align="right">Contact</TableCell>
+           
             <TableCell sx={{color:"white",fontWeight:"bold",fontFamily:"sans-serif" }} align="right">Alloted</TableCell>
             <TableCell sx={{color:"white",fontWeight:"bold",fontFamily:"sans-serif" }} align="right">looking For</TableCell>
             <TableCell sx={{color:"white",fontWeight:"bold",fontFamily:"sans-serif" }} align="right">Accept Request</TableCell>
@@ -41,7 +41,7 @@ export default function BasicTable({data}:{data:TableInfo[]}) {
                 {v.name}
               </TableCell>
               <TableCell sx={{color:"white"}} align="right">{v.email}</TableCell>
-              <TableCell sx={{color:"white"}} align="right">{v.contact}</TableCell>
+            
               <TableCell sx={{color:"white"}} align="right">{v.alloted}</TableCell>
               <TableCell sx={{color:"white"}} align="right">{v.lookingFor.join(",")}</TableCell>
               <TableCell sx={{color:"white"}} align="right">
