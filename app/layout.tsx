@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-800">
         <Providers>
-        <div className='w-full bg-gray-800 min-h-screen h-auto  max-w-screen-2xl mx-auto flex relative flex-col'>
+        <div className='w-full bg-gray-800 text-white min-h-screen h-auto  max-w-screen-2xl mx-auto flex relative flex-col'>
           <Navbar/>
 
         {children}

@@ -1,6 +1,6 @@
 "use client"
 import { useAppDispatch, useAppSelector } from '@/Redux/hooks'
-import { pushLookingFor, setAllotedSection, setConfirmOpen, setOpenCreate } from '@/Redux/reducers/sectionswap'
+import { pushLookingFor, setAllotedSection, setConfirmOpen, setDisplayMessage, setMessage, setOpenCreate } from '@/Redux/reducers/sectionswap'
 import { section } from '@/utils'
 import React from 'react'
 import ConfirmModal from './ConfirmModal'
@@ -34,7 +34,15 @@ const Modal = () => {
         })}
        </div>
       <div className='w-full my-10 flex justify-center items-center'>
-      <button onClick={()=>dispatch(setConfirmOpen(true))} className='border border-slate-800 px-10 py-2 rounded-md'>Create </button>
+      <button onClick={()=>{
+        if(allotedSection==0 || lookingFor.length<1){
+           dispatch(setMessage({msg:"Please Select Your section",type:"warning"}));
+           dispatch(setDisplayMessage(true));
+           return;
+
+        }
+        dispatch(setConfirmOpen(true));
+      }} className='border border-slate-800 px-10 py-2 rounded-md'>Create </button>
       </div>
       </div>
     </div>
