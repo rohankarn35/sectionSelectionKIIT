@@ -8,9 +8,9 @@ export default function Error({
   reset: () => void
 }) {
   return (
-    <div>
+    <div className="pt-28 w-full">
       <h2>Something went wrong!</h2>
-      <button onClick={() => reset()}>Try again</button>
+      <button onClick={() => reset()}>Try again or refresh the page</button>
     </div>
   )
 }
