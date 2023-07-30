@@ -29,7 +29,7 @@ const ConfirmModal = () => {
             <p><span className='font-bold text-cyan-400'>looking For </span>: {lookingfor.join(",")}</p>
             <p><span className='font-bold text-cyan-400'>Requested by</span> :{session.data?.user?.name}</p>
             <p><span className='font-bold text-cyan-400'>Email</span> :{session.data?.user?.email}</p>
-            <p><span className='font-bold text-cyan-400'>Contact</span> :{contact} (Don't worry your contact won't be available to others users, it is sent to the matched user)</p>
+            <p><span className='font-bold text-cyan-400'>Contact</span> :{contact} (Don&apos;t worry your contact won&apos;t be available to others users, it is sent to the matched user)</p>
         </div>
         <div className='flex flex-row justify-around my-5'>
             <button onClick={()=>dispatch(setConfirmOpen(false))} className='border font-bold text-red-400 hover:bg-red-700 hover:text-white border-gray-700 px-5 py-2 rounded-md'>Cancel</button>
