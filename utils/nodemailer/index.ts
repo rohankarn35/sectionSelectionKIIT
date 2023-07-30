@@ -26,14 +26,14 @@ export const sendMail = (
 ) =>
   new Promise((resolve, reject) => {
     let mailOptions = {
-      from: '"KIIT CONNECT" <no-reply@kiitconnect.live>',
-      to: senderEmail,
-      subject: "Match Found For Section Swapping",
-      html: `
+        from: '"KIIT CONNECT" <no-reply@kiitconnect.live>',
+        to: senderEmail,
+        subject: "Match Found For Section Swapping",
+        html: `
           <div style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px;">
             <h1 style="color: #333;">Hey ${senderName},</h1>
             <p>Congratulations! You have found a match for Section Swapping:</p>
-      
+            
             <div style="background-color: #fff; border: 1px solid #ccc; padding: 15px; margin-top: 15px;">
               <h2>Details:</h2>
               <h3>Name: ${matchedUserName}</h3>
@@ -52,10 +52,14 @@ export const sendMail = (
                 <p>Looking For: ${remoteLookingFor.join(", ")}</p>
               </div>
             </div>
+      
+            <p style="font-size: 12px; color: #666; margin-top: 15px;">
+              Please note that KIIT CONNECT is not responsible for any kind of trouble or inconvenience that may arise from section swapping. We act as a medium to help you find a match, and you are responsible for contacting the matched user yourself for further arrangements.
+            </p>
           </div>
         `,
-    };
-
+      };
+      
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         reject({ message: "Error Occured", success: false });
