@@ -29,7 +29,8 @@ const initialState:initialState={
        }
     },
     loading:false,
-    loadingIndex:-1
+    loadingIndex:-1,
+    userContact:""
 
 }
 
@@ -68,6 +69,10 @@ const sectionSwapSlice = createSlice({
         },
         setLoadingIndex:(state,action)=>{
             state.loadingIndex = action.payload;
+        },
+
+        setUserContact:(state,action)=>{
+            state.userContact = action.payload;
         }
 
 
@@ -77,6 +82,6 @@ const sectionSwapSlice = createSlice({
 });
 
 
-export const { pushLookingFor,setConfirmOpen,setAllotedSection,setOpenCreate,setDisplayMessage,setMessage,setMyData,setLoading,setLoadingIndex} = sectionSwapSlice.actions;
+export const { pushLookingFor,setConfirmOpen,setAllotedSection,setOpenCreate,setDisplayMessage,setMessage,setMyData,setLoading,setLoadingIndex,setUserContact} = sectionSwapSlice.actions;
 
 export default sectionSwapSlice.reducer

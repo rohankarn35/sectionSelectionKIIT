@@ -12,7 +12,8 @@ export interface initialState{
     };
     mydata:TableInfo,
     loading:boolean,
-    loadingIndex:number
+    loadingIndex:number,
+    userContact:string
    
 }
 

@@ -7,8 +7,8 @@ export default function Page() {
   };
 
   return (
-    <div className="w-full h-full min-h-screen flex items-center justify-center bg-gray-800">
-      <div className="bg-gray-900 p-8 rounded-lg shadow-md max-w-md w-full">
+    <div className="w-full h-full text-white min-h-screen flex items-center justify-center bg-gray-800">
+      <div className="bg-gray-900 text-white p-8 rounded-lg shadow-md max-w-md w-full">
         <h1 className="text-xl md:text-2xl  font-bold text-center mb-6">
           You are Not Logged In. Please login to continue.
         </h1>
