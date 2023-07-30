@@ -9,7 +9,10 @@ const initialState:initialState={
     openCreate:false,
     confirmOpen:false,
     displayMessage:false,
-    message:"",
+    message:{
+        msg:"",
+        type:""
+    },
     mydata:{
         _id:"",
         alloted:0,

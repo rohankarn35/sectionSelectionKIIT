@@ -6,7 +6,10 @@ export interface initialState{
     openCreate:boolean,
     confirmOpen:boolean,
     displayMessage:boolean
-    message:string;
+    message:{
+        msg:string,
+        type:string
+    };
     mydata:TableInfo,
     loading:boolean,
     loadingIndex:number

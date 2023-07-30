@@ -37,7 +37,10 @@ const ConfirmModal = () => {
               if(myData.alloted!==0){
                 dispatch(setConfirmOpen(false))
                 dispatch(setOpenCreate(false));
-                dispatch(setMessage("You have already created your Section Swap"))
+                dispatch(setMessage({
+                  msg:"You have already created your Match,Please refresh the page",
+                  type:"warning"
+                }))
                 dispatch(setDisplayMessage(true))
                 return;
               }
@@ -46,13 +49,13 @@ const ConfirmModal = () => {
               if(res==true){
                 dispatch(setConfirmOpen(false))
                 dispatch(setOpenCreate(false));
-                dispatch(setMessage("Created Sucessfully! Please refresh the page"))
+                dispatch(setMessage({msg:"Created Sucessfully! Please refresh the page",type:"success"}))
                 dispatch(setDisplayMessage(true))
 
               }else{
                 dispatch(setConfirmOpen(false))
                 dispatch(setOpenCreate(false));
-                dispatch(setMessage("Something Went Wrong"))
+                dispatch(setMessage({msg:"User might not available",type:"error"}))
                 dispatch(setDisplayMessage(true))
               }
             }} className='border text-green-400

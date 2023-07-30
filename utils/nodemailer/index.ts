@@ -1,6 +1,7 @@
 // const nodemailer = require("nodemailer");
 
-import nodemailer  from "nodemailer";
+import nodemailer from "nodemailer";
+import { cache } from "react";
 
 // Create a transport object
 export const transporter = nodemailer.createTransport({
@@ -8,18 +9,27 @@ export const transporter = nodemailer.createTransport({
   auth: {
     user: process.env.MAIL_USERNAME,
     // pass: "wbrknqwssdophyyd",
-    pass:process.env.MAIL_PASSWORD
+    pass: process.env.MAIL_PASSWORD,
   },
 });
 
-
-export const sendMail = (senderEmail:string,senderName:string,matchedUserEmail:string,matchedUserContact:string,matchedUserName:string,currentAlloted:number,currentLookingFor:number[],remoteAlloted:number,remoteLookingFor:number[]) =>
+export const sendMail = (
+  senderEmail: string,
+  senderName: string,
+  matchedUserEmail: string,
+  matchedUserContact: string,
+  matchedUserName: string,
+  currentAlloted: number,
+  currentLookingFor: number[],
+  remoteAlloted: number,
+  remoteLookingFor: number[]
+) =>
   new Promise((resolve, reject) => {
     let mailOptions = {
-        from: '"KIIT CONNECT" <no-reply@kiitconnect.live>',
-        to: senderEmail,
-        subject: 'Match Found For Section Swapping',
-        html: `
+      from: '"KIIT CONNECT" <no-reply@kiitconnect.live>',
+      to: senderEmail,
+      subject: "Match Found For Section Swapping",
+      html: `
           <div style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px;">
             <h1 style="color: #333;">Hey ${senderName},</h1>
             <p>Congratulations! You have found a match for Section Swapping:</p>
@@ -43,11 +53,9 @@ export const sendMail = (senderEmail:string,senderName:string,matchedUserEmail:s
               </div>
             </div>
           </div>
-        `
-      
-      
-      
+        `,
     };
+
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         reject({ message: "Error Occured", success: false });
