@@ -26,8 +26,8 @@ const ConfirmModal = () => {
         <div className='p-5 justify-center lg:text-xl  text-sm md:text-base  flex flex-col gap-2'>
             <p><span className='font-bold text-cyan-400'>Alloted</span> : {alloted} </p>
             <p><span className='font-bold text-cyan-400'>looking For </span>: {lookingfor.join(",")}</p>
-            <p><span className='font-bold text-cyan-400'>Requested by</span> : 3420_Ranjit Das</p>
-            <p><span className='font-bold text-cyan-400'>Email</span> :21053420@kiit.ac.in</p>
+            <p><span className='font-bold text-cyan-400'>Requested by</span> :{session.data?.user?.name}</p>
+            <p><span className='font-bold text-cyan-400'>Email</span> :{session.data?.user?.email}</p>
         </div>
         <div className='flex flex-row justify-around my-5'>
             <button onClick={()=>dispatch(setConfirmOpen(false))} className='border font-bold text-red-400 hover:bg-red-700 hover:text-white border-gray-700 px-5 py-2 rounded-md'>Cancel</button>

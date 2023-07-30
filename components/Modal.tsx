@@ -18,7 +18,7 @@ const Modal = () => {
     <div className={`w-screen ${open?"":"hidden"}  flex items-center justify-center fixed flex-col left-0 right-0 top-0 h-screen bg-gray-900/90 p-2 md:p-3`}>
         <ConfirmModal/>
         <div className='py-5'>
-            <button  onClick={()=>dispatch(setOpenCreate(false))} className='px-4 bg-green-400'>X</button>
+            <button  onClick={()=>dispatch(setOpenCreate(false))} className='px-4 bg-red-600  py-1 rounded-md'>Close</button>
         </div>
       <div className='w-full h-full scrollbar-thin scrollbar-thumb-cyan-600 overflow-y-auto bg-black/60 p-2 md:p-5 lg:w-4/5 md:w-3/4'>
         <h1 className={`mt-2 ml-2  `}>Select Alloted Section</h1>

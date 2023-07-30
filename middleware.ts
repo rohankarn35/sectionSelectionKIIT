@@ -10,38 +10,38 @@ import { signOut } from 'next-auth/react'
 // This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest,res:NextResponse) {
 
-// const token = await getToken({
-//     req:request,
-//     secret:process.env.NEXT_AUTH_SECRET
-// })
+const token = await getToken({
+    req:request,
+    secret:process.env.NEXT_AUTH_SECRET
+})
 
-// console.log(token)
-
-
-
-
-
-// if(!token && request.nextUrl.pathname!=="/"){
-//     return NextResponse.redirect(new URL('/', request.url));
-// }
-// if(!token?.email?.includes("@kiit.ac.in") && request.nextUrl.pathname.startsWith("/dashboard")){
-//     return NextResponse.redirect(new URL('/nonKitians', request.url))
-// }
-
-// if(token && request.nextUrl.pathname=="/"){
-//     if(token && !token?.email?.includes("@kiit.ac.in")){
-//         return NextResponse.redirect(new URL('/nonKitians', request.url))
-//     }else if(token && token?.email?.includes("@kiit.ac.in")){
-//         return NextResponse.redirect(new URL('/dashboard', request.url))
-//     }
-// }
+console.log(token)
 
 
 
 
 
+if(!token && request.nextUrl.pathname!=="/"){
+    return NextResponse.redirect(new URL('/', request.url));
+}
+if(!token?.email?.includes("@kiit.ac.in") && request.nextUrl.pathname.startsWith("/dashboard")){
+    return NextResponse.redirect(new URL('/nonKitians', request.url))
+}
 
-return;
+if(token && request.nextUrl.pathname=="/"){
+    if(token && !token?.email?.includes("@kiit.ac.in")){
+        return NextResponse.redirect(new URL('/nonKitians', request.url))
+    }else if(token && token?.email?.includes("@kiit.ac.in")){
+        return NextResponse.redirect(new URL('/dashboard', request.url))
+    }
+}
+
+
+
+
+
+
+// return;
 // if(!token) return NextResponse.redirect(new URL('/auth/login', request.url))
 // console.log(session)
 

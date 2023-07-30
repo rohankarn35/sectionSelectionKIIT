@@ -65,10 +65,10 @@ export default function BasicTable({data}:{data:TableInfo[]}) {
                            message:string
                         } = JSON.parse(c);
                         if(decode.success){
-                            dispatch(setMessage(decode.message));
+                            dispatch(setMessage({msg:decode.message,type:"success"}));
                         dispatch(setDisplayMessage(true));
                         }else{
-                            dispatch(setMessage(decode.message));
+                            dispatch(setMessage({msg:decode.message,type:"error"}));
                             dispatch(setDisplayMessage(true));
                         }
                         dispatch(setLoadingIndex(-1));
